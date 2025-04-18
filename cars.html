@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <h1>World's Comprehensive Car Gallery</h1>
+        <p>Discover and Compare: Over 50 Top Models from the Most Prestigious Brands</p>
+    </header>
+
+    <main class="container">
+        <div class="brands-grid">
+            <!-- BMW -->
+            <div class="brand-card" onclick="showCar('bmw')">
+                <div class="logo-container">
+                    <img src="logos/bmw.png" alt="BMW" class="brand-logo">
+                </div>
+                <span class="brand-name">BMW</span>
+            </div>
+            <!-- BMW M Series -->
+            <div class="brand-card" onclick="showCar('bmwM')">
+                <div class="logo-container">
+                    <img src="logos/bmw-m.png" alt="BMW M" class="brand-logo">
+                </div>
+                <span class="brand-name">BMW M Series</span>
+            </div>
+            
+            <!-- Mercedes-Benz -->
+            <div class="brand-card" onclick="showCar('mercedes')">
+                <div class="logo-container">
+                    <img src="logos/mercedes.png" alt="Mercedes-Benz" class="brand-logo">
+                </div>
+                <span class="brand-name">Mercedes-Benz</span>
+            </div>
+
+           <!-- Maybach -->
+            <div class="brand-card" onclick="showCar('maybach')">
+                <div class="logo-container">
+                    <img src="logos/maybach.png" alt="Maybach" class="brand-logo">
+                </div>
+                <span class="brand-name">Maybach Benz</span>
+            </div>
+            
+            <!-- Ferrari -->
+            <div class="brand-card" onclick="showCar('ferrari')">
+                <div class="logo-container">
+                    <img src="logos/ferrari.png" alt="Ferrari" class="brand-logo">
+                </div>
+                <span class="brand-name">Ferrari</span>
+            </div>
+        
+            <!-- Volkswagen -->
+            <div class="brand-card" onclick="showCar('volkswagen')">
+                <div class="logo-container">
+                    <img src="logos/volkswagen.png" alt="Volkswagen" class="brand-logo">
+                </div>
+                <span class="brand-name">Volkswagen</span>
+            </div>
+        
+            <!-- Opel -->
+            <div class="brand-card" onclick="showCar('opel')">
+                <div class="logo-container">
+                    <img src="logos/opel.png" alt="Opel" class="brand-logo">
+                </div>
+                <span class="brand-name">Opel</span>
+            </div>
+        
+            <!-- Ford -->
+            <div class="brand-card" onclick="showCar('ford')">
+                <div class="logo-container">
+                    <img src="logos/ford.png" alt="Ford" class="brand-logo">
+                </div>
+                <span class="brand-name">Ford</span>
+            </div>
+        
+            <!-- Ford Mustang -->
+            <div class="brand-card" onclick="showCar('fordmustang')">
+                <div class="logo-container">
+                    <img src="logos/ford-mustang.png" alt="Ford Mustang" class="brand-logo">
+                </div>
+                <span class="brand-name">Ford Mustang</span>
+            </div>
+        
+            <!-- Chevrolet -->
+            <div class="brand-card" onclick="showCar('chevrolet')">
+                <div class="logo-container">
+                    <img src="logos/chevrolet.png" alt="Chevrolet" class="brand-logo">
+                </div>
+                <span class="brand-name">Chevrolet</span>
+            </div>
+        
+            <!-- Dodge -->
+            <div class="brand-card" onclick="showCar('dodge')">
+                <div class="logo-container">
+                    <img src="logos/dodge.png" alt="Dodge" class="brand-logo">
+                </div>
+                <span class="brand-name">Dodge</span>
+            </div>
+        
+            <!-- Peugeot -->
+            <div class="brand-card" onclick="showCar('peugeot')">
+                <div class="logo-container">
+                    <img src="logos/peugeot.png" alt="Peugeot" class="brand-logo">
+                </div>
+                <span class="brand-name">Peugeot</span>
+            </div>
+        
+            <!-- Tesla -->
+            <div class="brand-card" onclick="showCar('tesla')">
+                <div class="logo-container">
+                    <img src="logos/tesla.png" alt="Tesla" class="brand-logo">
+                </div>
+                <span class="brand-name">Tesla</span>
+            </div>
+        
+            <!-- Mansory -->
+            <div class="brand-card" onclick="showCar('mansory')">
+                <div class="logo-container">
+                    <img src="logos/mansory.png" alt="Mansory" class="brand-logo">
+                </div>
+                <span class="brand-name">Mansory</span>
+            </div>
+        
+            <!-- Rolls-Royce -->
+            <div class="brand-card" onclick="showCar('rollsroyce')">
+                <div class="logo-container">
+                    <img src="logos/rollsroyce.png" alt="Rolls-Royce" class="brand-logo">
+                </div>
+                <span class="brand-name">Rolls-Royce</span>
+            </div>
+        
+            <!-- Alfa Romeo -->
+            <div class="brand-card" onclick="showCar('alfaromeo')">
+                <div class="logo-container">
+                    <img src="logos/alfaromeo.png" alt="Alfa Romeo" class="brand-logo">
+                </div>
+                <span class="brand-name">Alfa Romeo</span>
+            </div>
+
+            <!-- Infiniti -->
+            <div class="brand-card" onclick="showCar('infiniti')">
+                <div class="logo-container">
+                    <img src="logos/infiniti.png" alt="Infiniti" class="brand-logo">
+                </div>
+                <span class="brand-name">Infiniti</span>
+            </div>
+
+            <!-- Bentley -->
+            <div class="brand-card" onclick="showCar('bentley')">
+                <div class="logo-container">
+                    <img src="logos/bentley.png" alt="Bentley" class="brand-logo">
+                </div>
+                <span class="brand-name">Bentley</span>
+            </div>
+        
+            <!-- Cadillac -->
+            <div class="brand-card" onclick="showCar('cadillac')">
+                <div class="logo-container">
+                    <img src="logos/cadillac.png" alt="Cadillac" class="brand-logo">
+                </div>
+                <span class="brand-name">Cadillac</span>
+            </div>
+        
+            <!-- Citroën -->
+            <div class="brand-card" onclick="showCar('citroen')">
+                <div class="logo-container">
+                    <img src="logos/citroen.png" alt="Citroën" class="brand-logo">
+                </div>
+                <span class="brand-name">Citroën</span>
+            </div>
+        
+            <!-- Honda -->
+            <div class="brand-card" onclick="showCar('honda')">
+                <div class="logo-container">
+                    <img src="logos/honda.png" alt="Honda" class="brand-logo">
+                </div>
+                <span class="brand-name">Honda</span>
+            </div>
+        
+            <!-- Aston Martin -->
+            <div class="brand-card" onclick="showCar('astonmartin')">
+                <div class="logo-container">
+                    <img src="logos/astonmartin.png" alt="Aston Martin" class="brand-logo">
+                </div>
+                <span class="brand-name">Aston Martin</span>
+            </div>
+            
+            <!-- Jaguar -->
+            <div class="brand-card" onclick="showCar('jaguar')">
+                <div class="logo-container">
+                    <img src="logos/jaguar.png" alt="Jaguar" class="brand-logo">
+                </div>
+                <span class="brand-name">Jaguar</span>
+            </div>      
+
+            <!-- Mitsubishi -->
+            <div class="brand-card" onclick="showCar('mitsubishi')">
+                <div class="logo-container">
+                    <img src="logos/mitsubishi.png" alt="Mitsubishi" class="brand-logo">
+                </div>
+                <span class="brand-name">Mitsubishi</span>
+            </div>
+        
+            <!-- Lexus -->
+            <div class="brand-card" onclick="showCar('lexus')">
+                <div class="logo-container">
+                    <img src="logos/lexus.png" alt="Lexus" class="brand-logo">
+                </div>
+                <span class="brand-name">Lexus</span>
+            </div>
+        
+            <!-- Hyundai -->
+            <div class="brand-card" onclick="showCar('hyundai')">
+                <div class="logo-container">
+                    <img src="logos/hyundai.png" alt="Hyundai" class="brand-logo">
+                </div>
+                <span class="brand-name">Hyundai</span>
+            </div>
+        
+            <!-- Jeep -->
+            <div class="brand-card" onclick="showCar('jeep')">
+                <div class="logo-container">
+                    <img src="logos/jeep.png" alt="Jeep" class="brand-logo">
+                </div>
+                <span class="brand-name">Jeep</span>
+            </div>
+        
+            <!-- Maserati -->
+            <div class="brand-card" onclick="showCar('maserati')">
+                <div class="logo-container">
+                    <img src="logos/maserati.png" alt="Maserati" class="brand-logo">
+                </div>
+                <span class="brand-name">Maserati</span>
+            </div>
+        
+            <!-- Acura -->
+            <div class="brand-card" onclick="showCar('acura')">
+                <div class="logo-container">
+                    <img src="logos/acura.png" alt="Acura" class="brand-logo">
+                </div>
+                <span class="brand-name">Acura</span>
+            </div>
+        
+            <!-- Buick -->
+            <div class="brand-card" onclick="showCar('buick')">
+                <div class="logo-container">
+                    <img src="logos/buick.png" alt="Buick" class="brand-logo">
+                </div>
+                <span class="brand-name">Buick</span>
+            </div>
+        
+            <!-- Genesis -->
+            <div class="brand-card" onclick="showCar('genesis')">
+                <div class="logo-container">
+                    <img src="logos/genesis.png" alt="Genesis" class="brand-logo">
+                </div>
+                <span class="brand-name">Genesis</span>
+            </div>
+        
+            <!-- DS -->
+            <div class="brand-card" onclick="showCar('ds')">
+                <div class="logo-container">
+                    <img src="logos/ds.png" alt="DS" class="brand-logo">
+                </div>
+                <span class="brand-name">DS</span>
+            </div>
+        
+            <!-- Karma -->
+            <div class="brand-card" onclick="showCar('karma')">
+                <div class="logo-container">
+                    <img src="logos/karma.png" alt="Karma" class="brand-logo">
+                </div>
+                <span class="brand-name">Karma</span>
+            </div>
+        
+            <!-- Lamborghini -->
+            <div class="brand-card" onclick="showCar('lamborghini')">
+                <div class="logo-container">
+                    <img src="logos/lamborghini.png" alt="Lamborghini" class="brand-logo">
+                </div>
+                <span class="brand-name">Lamborghini</span>
+            </div>
+        
+            <!-- Koenigsegg -->
+            <div class="brand-card" onclick="showCar('koenigsegg')">
+                <div class="logo-container">
+                    <img src="logos/koenigsegg.png" alt="Koenigsegg" class="brand-logo">
+                </div>
+                <span class="brand-name">Koenigsegg</span>
+            </div>
+        
+            <!-- Nissan -->
+            <div class="brand-card" onclick="showCar('nissan')">
+                <div class="logo-container">
+                    <img src="logos/nissan.png" alt="Nissan" class="brand-logo">
+                </div>
+                <span class="brand-name">Nissan</span>
+            </div>
+        
+            <!-- Toyota -->
+            <div class="brand-card" onclick="showCar('toyota')">
+                <div class="logo-container">
+                    <img src="logos/toyota.png" alt="Toyota" class="brand-logo">
+                </div>
+                <span class="brand-name">Toyota</span>
+            </div>
+        
+            <!-- Pagani -->
+            <div class="brand-card" onclick="showCar('pagani')">
+                <div class="logo-container">
+                    <img src="logos/pagani.png" alt="Pagani" class="brand-logo">
+                </div>
+                <span class="brand-name">Pagani</span>
+            </div>
+        
+            <!-- Porsche -->
+            <div class="brand-card" onclick="showCar('porsche')">
+                <div class="logo-container">
+                    <img src="logos/porsche.png" alt="Porsche" class="brand-logo">
+                </div>
+                <span class="brand-name">Porsche</span>
+            </div>
+        
+            <!-- McLaren -->
+            <div class="brand-card" onclick="showCar('mclaren')">
+                <div class="logo-container">
+                    <img src="logos/mclaren.png" alt="McLaren" class="brand-logo">
+                </div>
+                <span class="brand-name">McLaren</span>
+            </div>
+        
+            <!-- Bugatti -->
+            <div class="brand-card" onclick="showCar('bugatti')">
+                <div class="logo-container">
+                    <img src="logos/bugatti.png" alt="Bugatti" class="brand-logo">
+                </div>
+                <span class="brand-name">Bugatti</span>
+            </div>
+        
+            <!-- Audi -->
+            <div class="brand-card" onclick="showCar('audi')">
+                <div class="logo-container">
+                    <img src="logos/audi.png" alt="Audi" class="brand-logo">
+                </div>
+                <span class="brand-name">Audi</span>
+            </div>
+            
+            <!-- Range Rover -->
+            <div class="brand-card" onclick="showCar('rangeRover')">
+                <div class="logo-container">
+                    <img src="logos/range-rover.png" alt="Range Rover" class="brand-logo">
+                </div>
+                <span class="brand-name">Land Rover</span>
+            </div>
+        
+
+            <!-- Lancia -->
+            <div class="brand-card" onclick="showCar('lancia')">
+                <div class="logo-container">
+                    <img src="logos/lancia.png" alt="lancia" class="brand-logo">
+                </div>
+                <span class="brand-name">Lancia</span>
+            </div>
+
+            <!-- Saab -->
+            <div class="brand-card" onclick="showCar('saab')">
+                <div class="logo-container">
+                    <img src="logos/saab.png" alt="saab" class="brand-logo">
+                </div>
+                <span class="brand-name">Saab</span>
+            </div>
+
+            <!-- Subaru -->
+            <div class="brand-card" onclick="showCar('subaru')">
+                <div class="logo-container">
+                    <img src="logos/subaru.png" alt="subaru" class="brand-logo">
+                </div>
+                <span class="brand-name">Subaru</span>
+            </div>  
+
+            <!-- Volvo -->
+            <div class="brand-card" onclick="showCar('volvo')">
+                <div class="logo-container">
+                    <img src="logos/volvo.png" alt="volvo" class="brand-logo">
+                </div>
+                <span class="brand-name">Volvo</span>
+            </div>
+
+            <!-- Mazda -->
+            <div class="brand-card" onclick="showCar('mazda')">
+                <div class="logo-container">
+                    <img src="logos/mazda.png" alt="mazda" class="brand-logo">
+                </div>
+                <span class="brand-name">Mazda</span>
+            </div>
+
+            <!-- mini -->
+            <div class="brand-card" onclick="showCar('mini')">
+                <div class="logo-container">
+                    <img src="logos/mini.png" alt="mini" class="brand-logo">
+                </div>
+                <span class="brand-name">Mini</span>
+            </div>
+
+            
+        </div>
+
+        <div class="car-details" id="carDetails">
+            <div class="car-image-container">
+                <img id="carImage" class="car-image" alt="Car Image">
+            </div>
+            <div class="car-info">
+                <h2 id="carTitle"></h2>
+                <div class="car-models">
+                    <div class="model-card" onclick="showModel('model1')">
+                        <h3 id="model1Title"></h3>
+                        <p id="model1Desc"></p>
+                    </div>
+                    <div class="model-card" onclick="showModel('model2')">
+                        <h3 id="model2Title"></h3>
+                        <p id="model2Desc"></p>
+                    </div>
+                    <div class="model-card" onclick="showModel('model3')">
+                        <h3 id="model3Title"></h3>
+                        <p id="model3Desc"></p>
+                    </div>
+                </div>
+                <p id="carDescription"></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2023 Car Gallery - All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,493 @@
+:root {
+  /* پالت رنگی لوکس و حرفه‌ای */
+  --primary: #00C9A7; /* سبز آبی فیروزه‌ای */
+  --secondary: #0081CF; /* آبی سیر */
+  --accent: #00D2FC; /* آبی روشن */
+  --dark: #0A0E17; /* مشکی آبی بسیار تیره */
+  --light: #F0F8FF; /* آبی بسیار روشن */
+  --bg-gradient: linear-gradient(135deg, 
+    var(--dark) 0%, 
+    #0F2027 30%, 
+    #203A43 60%, 
+    #2C5364 100%);
+  
+  /* گرادیانت دینامیک برای افکت‌های ویژه */
+  --dynamic-gradient: linear-gradient(45deg,
+    var(--primary) 0%,
+    var(--accent) 25%,
+    var(--secondary) 50%,
+    var(--primary) 75%,
+    var(--accent) 100%);
+  
+  /* سایه‌های پیشرفته */
+  --shadow-sm: 0 2px 12px rgba(0, 201, 167, 0.1);
+  --shadow-md: 0 4px 20px rgba(0, 129, 207, 0.15);
+  --shadow-lg: 0 8px 32px rgba(0, 210, 252, 0.2);
+  --shadow-xl: 0 12px 48px rgba(10, 14, 23, 0.3);
+  
+  /* شعاع گوشه‌ها */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  
+  /* ترنزیشن‌های حرفه‌ای */
+  --transition-fast: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-medium: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --transition-slow: 0.6s cubic-bezier(0.32, 0.72, 0, 1);
+  
+  /* افکت‌های نورپردازی */
+  --glow-sm: 0 0 8px rgba(0, 210, 252, 0.4);
+  --glow-md: 0 0 16px rgba(0, 201, 167, 0.5);
+  --glow-lg: 0 0 24px rgba(0, 129, 207, 0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Vazir', 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background: var(--bg-gradient);
+  color: var(--light);
+  min-height: 100vh;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-attachment: fixed;
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* هدر فوق حرفه‌ای */
+.header {
+  text-align: center;
+  padding: 5rem 1rem 4rem;
+  background: rgba(10, 14, 23, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  margin-bottom: 3rem;
+  border-bottom: 1px solid rgba(0, 210, 252, 0.2);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 50%, 
+    rgba(0, 201, 167, 0.15) 0%, 
+    transparent 50%),
+    radial-gradient(circle at 80% 30%, 
+    rgba(0, 129, 207, 0.15) 0%, 
+    transparent 50%);
+  z-index: -1;
+}
+
+.header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, 
+    var(--primary), 
+    var(--accent), 
+    var(--light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  text-shadow: var(--glow-sm);
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.header p {
+  color: rgba(240, 248, 255, 0.9);
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+/* کارت‌های برند - طراحی لوکس */
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 5rem;
+}
+
+.brand-card {
+  aspect-ratio: 1/1;
+  background: rgba(10, 14, 23, 0.7);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition-medium);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  border: 1px solid rgba(0, 210, 252, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.brand-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: var(--shadow-lg), var(--glow-md);
+  border-color: rgba(0, 210, 252, 0.3);
+  background: rgba(10, 14, 23, 0.9);
+}
+
+.brand-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--dynamic-gradient);
+  opacity: 0;
+  mix-blend-mode: overlay;
+  transition: opacity var(--transition-fast);
+}
+
+.brand-card:hover::after {
+  opacity: 0.3;
+}
+
+.logo-container {
+  width: 100%;
+  height: 100%;
+  padding: 20%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: all var(--transition-medium);
+  filter: grayscale(30%) contrast(110%) brightness(1.1);
+  transform: scale(0.95);
+  z-index: 2;
+}
+
+.brand-card:hover .brand-logo {
+  filter: grayscale(0%) contrast(100%) brightness(1.2);
+  transform: scale(1.08);
+}
+
+.brand-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background: linear-gradient(to top, 
+    rgba(10, 14, 23, 0.9) 0%, 
+    transparent 100%);
+  color: var(--light);
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all var(--transition-slow);
+  transform: translateY(0);
+  opacity: 1;
+  z-index: 3;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.brand-card:hover .brand-name {
+  transform: translateY(150%);
+  opacity: 0;
+}
+
+/* بخش جزئیات خودرو - طراحی پریمیوم */
+.car-details {
+  display: none;
+  background: rgba(10, 14, 23, 0.85);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  margin: 5rem 0;
+  box-shadow: var(--shadow-xl);
+  animation: fadeInUp var(--transition-slow) both;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 210, 252, 0.15);
+}
+
+.car-image-container {
+  height: 750px;
+  overflow: hidden;
+  position: relative;
+}
+
+.car-image-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, 
+    transparent 60%, 
+    rgba(10, 14, 23, 0.9) 100%);
+  z-index: 1;
+}
+
+.car-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.car-image-container:hover .car-image {
+  transform: scale(1.08);
+}
+
+.car-info {
+  padding: 4rem;
+}
+
+.car-info h2 {
+  color: var(--primary);
+  margin-bottom: 2.5rem;
+  font-size: 2.8rem;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+.car-info h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--dynamic-gradient);
+  background-size: 200% 200%;
+  animation: gradientFlow 3s ease infinite;
+  border-radius: 2px;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.car-models {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  margin: 3rem 0;
+}
+
+.model-card {
+  background: rgba(15, 25, 35, 0.6);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  cursor: pointer;
+  transition: all var(--transition-medium);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(0, 210, 252, 0.1);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.model-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background: var(--dynamic-gradient);
+  transition: height var(--transition-medium);
+  z-index: 1;
+}
+
+.model-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg), var(--glow-sm);
+  border-color: rgba(0, 210, 252, 0.3);
+  background: rgba(15, 25, 35, 0.8);
+}
+
+.model-card:hover::before {
+  height: 100%;
+}
+
+.model-card h3 {
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+  position: relative;
+  z-index: 2;
+}
+
+.model-card p {
+  color: rgba(240, 248, 255, 0.85);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  z-index: 2;
+  position: relative;
+}
+
+.car-info p {
+  color: rgba(240, 248, 255, 0.9);
+  font-size: 1.2rem;
+  line-height: 2;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+/* فوتر لوکس */
+.footer {
+  text-align: center;
+  padding: 4rem;
+  color: var(--light);
+  background: rgba(5, 10, 15, 0.7);
+  margin-top: 5rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: relative;
+  border-top: 1px solid rgba(0, 210, 252, 0.2);
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(to right, 
+    transparent, 
+    var(--primary), 
+    var(--accent), 
+    transparent);
+  box-shadow: var(--glow-sm);
+}
+
+/* رسپانسیو پیشرفته */
+@media (max-width: 1440px) {
+  .car-image-container {
+    height: 650px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .brands-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+  
+  .car-image-container {
+    height: 550px;
+  }
+  
+  .car-info {
+    padding: 3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .brands-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 2rem;
+  }
+  
+  .car-image-container {
+    height: 450px;
+  }
+  
+  .car-models {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .header {
+    padding: 4rem 1rem;
+  }
+  
+  .header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .header p {
+    font-size: 1.1rem;
+  }
+  
+  .brands-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .car-image-container {
+    height: 350px;
+  }
+  
+  .car-info {
+    padding: 2.5rem;
+  }
+  
+  .car-info h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    padding: 3rem 1rem;
+  }
+  
+  .header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .brands-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+  }
+  
+  .car-image-container {
+    height: 300px;
+  }
+  
+  .car-info {
+    padding: 2rem;
+  }
+  
+  .car-models {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer {
+    padding: 3rem 1.5rem;
+  }
+}
