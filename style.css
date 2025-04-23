@@ -1,29 +1,39 @@
 :root {
-  /* پالت رنگی لوکس و حرفه‌ای */
-  --primary: #00C9A7; /* سبز آبی فیروزه‌ای */
-  --secondary: #0081CF; /* آبی سیر */
-  --accent: #00D2FC; /* آبی روشن */
-  --dark: #0A0E17; /* مشکی آبی بسیار تیره */
-  --light: #F0F8FF; /* آبی بسیار روشن */
-  --bg-gradient: linear-gradient(135deg, 
-    var(--dark) 0%, 
-    #0F2027 30%, 
-    #203A43 60%, 
-    #2C5364 100%);
+   --ice-blue:#c0c0c0 ;       /* ICE BLUE - for logo backgrounds */
+  --powder-blue: #A6C6DB;    /* POWDER BLUE */
+  --sapphire: #0F52BA;       /* SAPPHIRE (corrected from OF52BA) */
+  --deep-navy: #000A26;      /* DEEP NAVY (corrected from OOOA26) */
   
-  /* گرادیانت دینامیک برای افکت‌های ویژه */
+  /* Adjusted color roles */
+  --primary: var(--sapphire);        /* Primary color now Sapphire */
+  --secondary: var(--deep-navy);     /* Secondary color now Deep Navy */
+  --accent: var(--powder-blue);      /* Accent color now Powder Blue */
+  --dark: #050A15;                   /* Slightly darker than Deep Navy for backgrounds */
+  --light: var(--ice-blue);          /* Light color now Ice Blue */ /* آبی بسیار روشن */
+
+  --bg-gradient: linear-gradient(135deg, 
+    var(--deep-navy) 0%, 
+    #0A1A3A 30%, 
+    #1A3A6A 60%, 
+    #2A5A9A 100%);
+  
   --dynamic-gradient: linear-gradient(45deg,
-    var(--primary) 0%,
-    var(--accent) 25%,
-    var(--secondary) 50%,
-    var(--primary) 75%,
-    var(--accent) 100%);
+    var(--sapphire) 0%,
+    var(--powder-blue) 25%,
+    var(--deep-navy) 50%,
+    var(--sapphire) 75%,
+    var(--powder-blue) 100%);
   
   /* سایه‌های پیشرفته */
-  --shadow-sm: 0 2px 12px rgba(0, 201, 167, 0.1);
-  --shadow-md: 0 4px 20px rgba(0, 129, 207, 0.15);
-  --shadow-lg: 0 8px 32px rgba(0, 210, 252, 0.2);
-  --shadow-xl: 0 12px 48px rgba(10, 14, 23, 0.3);
+  --shadow-sm: 0 2px 12px rgba(15, 82, 186, 0.1);
+  --shadow-md: 0 4px 20px rgba(0, 10, 38, 0.15);
+  --shadow-lg: 0 8px 32px rgba(166, 198, 219, 0.2);
+  --shadow-xl: 0 12px 48px rgba(5, 10, 21, 0.3);
+  
+  /* Glow effects */
+  --glow-sm: 0 0 8px rgba(214, 230, 242, 0.4);
+  --glow-md: 0 0 16px rgba(15, 82, 186, 0.5);
+  --glow-lg: 0 0 24px rgba(0, 10, 38, 0.6);
   
   /* شعاع گوشه‌ها */
   --radius-sm: 8px;
@@ -132,7 +142,7 @@ body {
 
 .brand-card {
   aspect-ratio: 1/1;
-  background: rgba(10, 14, 23, 0.7);
+  background: rgba(214, 230, 242, 0.1); /* Ice blue with low opacity */
   border-radius: var(--radius-xl);
   overflow: hidden;
   cursor: pointer;
@@ -166,13 +176,18 @@ body {
 }
 
 .logo-container {
+  background: rgba(214, 230, 242, 0.15); /* شفافیت با جلوه شیشه‌ای */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   width: 100%;
   height: 100%;
   padding: 20%;
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center ;
 }
 
 .brand-logo {
@@ -180,9 +195,9 @@ body {
   height: 100%;
   object-fit: contain;
   transition: all var(--transition-medium);
-  filter: grayscale(30%) contrast(110%) brightness(1.1);
   transform: scale(0.95);
   z-index: 2;
+  filter: brightness(1.2) contrast(1.1);
 }
 
 .brand-card:hover .brand-logo {
@@ -192,22 +207,20 @@ body {
 
 .brand-name {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  text-align: center;
-  padding: 1.5rem 1rem;
-  background: linear-gradient(to top, 
-    rgba(10, 14, 23, 0.9) 0%, 
-    transparent 100%);
-  color: var(--light);
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: all var(--transition-slow);
-  transform: translateY(0);
-  opacity: 1;
-  z-index: 3;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    background: linear-gradient(to top, rgb(0 0 63 / 90%) 0%, transparent 100%);
+    color: #fef1e9;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all var(--transition-slow);
+    transform: translateY(0);
+    opacity: 1;
+    z-index: 3;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .brand-card:hover .brand-name {
@@ -230,9 +243,11 @@ body {
 }
 
 .car-image-container {
-  height: 750px;
+  height: 600px; /* کاهش ارتفاع از 750px */
   overflow: hidden;
   position: relative;
+  margin: 2rem; /* اضافه کردن margin به جای padding برای ایجاد فاصله */
+  border-radius: var(--radius-xl); /* اضافه کردن انحنای گوشه */
 }
 
 .car-image-container::before {
@@ -279,14 +294,16 @@ body {
   height: 4px;
   background: var(--dynamic-gradient);
   background-size: 200% 200%;
-  animation: gradientFlow 3s ease infinite;
+  animation: gradientFlow 7s ease infinite;
   border-radius: 2px;
 }
 
 @keyframes gradientFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0%, 20% { background-position: 0% 50%; } /* 4s حرکت + 1s توقف = 5s (20% از 5s کل) */
+  40% { background-position: 100% 50%; }   /* 4s حرکت + 1s توقف = 5s */
+  60% { background-position: 0% 50%; }     /* 4s حرکت + 1s توقف = 5s */
+  80% { background-position: 100% 50%; }   /* 4s حرکت + 1s توقف = 5s */
+  100% { background-position: 0% 50%; }  
 }
 
 .car-models {
@@ -389,7 +406,7 @@ body {
 /* رسپانسیو پیشرفته */
 @media (max-width: 1440px) {
   .car-image-container {
-    height: 650px;
+    height: 500px;
   }
 }
 
@@ -399,7 +416,7 @@ body {
   }
   
   .car-image-container {
-    height: 550px;
+    height: 450px;
   }
   
   .car-info {
@@ -418,7 +435,8 @@ body {
   }
   
   .car-image-container {
-    height: 450px;
+    height: 380px;
+    margin: 1.5rem;
   }
   
   .car-models {
@@ -449,7 +467,8 @@ body {
   }
   
   .car-image-container {
-    height: 350px;
+    height: 300px;
+    margin: 1rem;
   }
   
   .car-info {
@@ -476,7 +495,8 @@ body {
   }
   
   .car-image-container {
-    height: 300px;
+    height: 250px;
+    margin: 0.75rem;
   }
   
   .car-info {
