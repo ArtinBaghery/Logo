@@ -1,5 +1,5 @@
 :root {
-   --ice-blue:#c0c0c0 ;       /* ICE BLUE - for logo backgrounds */
+  --ice-blue:#c0c0c0 ;       /* ICE BLUE - for logo backgrounds */
   --powder-blue: #A6C6DB;    /* POWDER BLUE */
   --sapphire: #0F52BA;       /* SAPPHIRE (corrected from OF52BA) */
   --deep-navy: #000A26;      /* DEEP NAVY (corrected from OOOA26) */
@@ -9,13 +9,13 @@
   --secondary: var(--deep-navy);     /* Secondary color now Deep Navy */
   --accent: var(--powder-blue);      /* Accent color now Powder Blue */
   --dark: #050A15;                   /* Slightly darker than Deep Navy for backgrounds */
-  --light: var(--ice-blue);          /* Light color now Ice Blue */ /* آبی بسیار روشن */
+  --light: var(--ice-blue);           /* Light color now Ice Blue */ /* آبی بسیار روشن */
 
   --bg-gradient: linear-gradient(135deg, 
-    var(--deep-navy) 0%, 
-    #0A1A3A 30%, 
-    #1A3A6A 60%, 
-    #2A5A9A 100%);
+    #1a2a4a 0%, 
+    #2a4a7a 30%, 
+    #3a6aaa 60%, 
+    #4a8ada 100%);
   
   --dynamic-gradient: linear-gradient(45deg,
     var(--sapphire) 0%,
